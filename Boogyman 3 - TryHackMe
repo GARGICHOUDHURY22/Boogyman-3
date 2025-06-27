@@ -1,0 +1,76 @@
+Boogeyman 3 - TryHackMe Incident Response Summary
+
+Target IP Address: 10.10.223.254
+
+Boogeyman 3 continues the persistent attack campaign against Quick Logistics LLC, despite the company’s efforts to improve its security posture by hiring a Managed Security Service Provider (MSSP). The threat actor known as Boogeyman adapts its tactics, evades detection, and once again infiltrates the organization — this time using phishing and stealthy post-exploitation techniques.
+
+This room simulates a real-world threat investigation that combines phishing analysis, endpoint monitoring, and log correlation using the Elastic Stack (ELK). It provides hands-on experience in threat hunting, timeline analysis, and detection of advanced attacker behavior.
+
+---
+
+Background
+
+After previous attacks, Quick Logistics LLC outsourced its Security Operations Center to a third party. However, the Boogeyman remained undetected, silently waiting to strike again.
+
+The incident begins when the CEO, Evan Hutchinson, receives a suspicious phishing email with a malicious document. Although skeptical, Evan opens the attachment, finds nothing suspicious on the surface, and reports the email. The security team begins an investigation based on this report.
+
+---
+
+Objectives
+
+- Analyze the phishing attempt and email payload
+- Examine the ISO file and its contents
+- Correlate logs in ELK to track the attacker’s movement
+- Identify tactics, techniques, and procedures (TTPs) used by the Boogeyman
+- Determine the timeline and scope of compromise
+
+---
+
+Environment and Access
+
+The investigation is performed using a preconfigured Elastic Stack virtual machine, accessible via the TryHackMe AttackBox or VPN.
+
+TryHackMe Credentials:
+URL: http\://MACHINE\_IP
+Username: elastic
+Password: elastic
+
+---
+
+Tools and Technologies Used
+
+- Kibana (ELK Stack) for log analysis
+- Sysmon for endpoint logging
+- File and email analysis tools
+- Timeline correlation techniques
+- Linux command-line utilities such as grep and strings
+
+---
+
+Investigation Summary
+
+The phishing email was sent to the CEO with an ISO attachment
+Inside the ISO, the attacker embedded a malicious file
+Initial access was achieved via email, with intentions to move laterally within the organization
+The incident was presumed to have occurred between August 29 and August 30, 2023
+Security logs were analyzed to assess the extent of the compromise and identify indicators of compromise (IOCs)
+
+---
+
+Prerequisites
+
+This challenge assumes knowledge gained from the SOC Level 1 Path on TryHackMe. Completing the following rooms is recommended:
+
+- Sysmon
+- ItsyBitsy
+- Investigating with ELK
+- Boogeyman 1
+- Boogeyman 2
+- Investigation Platform
+
+---
+
+Conclusion
+
+Boogeyman 3 demonstrates how persistent threat actors evolve their methods and continue to bypass defenses, even with managed security services in place. This room reinforces the importance of proactive monitoring, log analysis, and threat hunting to detect and contain modern attacks. By working through this challenge, I gained valuable experience in analyzing real-world phishing campaigns, leveraging ELK for detection, and tracing attacker behavior through correlated system logs.
+
